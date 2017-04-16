@@ -1,0 +1,18 @@
+
+RewriteEngine On    # Turn on the rewriting engine
+
+RewriteRule    ^about/?$    about.php    [NC,L]    # Handle requests for "about"
+
+RewriteRule    ^contact/?$  contact.php    [NC,L]    # Handle requests for "contactus"
+
+RewriteRule    ^home/?$  index.php    [NC,L]    # Handle requests for "home"
+
+RewriteRule    ^product/?$  product.php    [NC,L]    # Handle requests for "product"
+
+RewriteRule    ^products/?$  products.php    [NC,L]    # Handle requests for "products"
+
+<FilesMatch "\.(jpg|css|png|js|json)$">
+Header set Cache-Control "max-age=864000"
+</FilesMatch>
+
+#RewriteRule ^product/([a-zA-Z0-9-]+)$ product.php?name=$1 [NC,L]
